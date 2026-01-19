@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "description": "This is test A",
+    "status": "todo",
+    "createdAt": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "updatedAt": "YYYY-MM-DDTHH:mm:ss.sssZ"
+  },
+  {
+    "id": "2",
+    "description": "This is test B",
+    "status": "in-progress",
+    "createdAt": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "updatedAt": "YYYY-MM-DDTHH:mm:ss.sssZ"
+  },
+  {
+    "id": "3",
+    "description": "This is test B",
+    "status": "done",
+    "createdAt": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "updatedAt": "YYYY-MM-DDTHH:mm:ss.sssZ"
+  },
+  {
+    "id": "4",
+    "description": "A new task",
+    "status": "done",
+    "createdAt": "YYYY-MM-DDTHH:mm:ss.sssZ",
+    "updatedAt": "YYYY-MM-DDTHH:mm:ss.sssZ"
+  }
+]
