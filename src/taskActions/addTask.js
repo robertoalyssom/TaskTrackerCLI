@@ -30,11 +30,8 @@ export default function addTask(data, userInputs) {
 
 function createID(data) {
   const lastTask = data.slice(-1);
-  // const newTaskID = Number(lastTask[0].id) + 1;
   const newTaskID = Number(lastTask[0].id + 1);
   console.log("*newTaskID: ", newTaskID);
 
   return String(newTaskID);
 }
-
-// typing "test a test" it's interprets as a unique argument
