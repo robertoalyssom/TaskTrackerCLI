@@ -1,10 +1,10 @@
-import { validateInputAdd } from "../validate.js";
+import { validateTask } from "../validate.js";
 import fs from "fs";
 
 // Add new task
 export default function addTask(data, userInputs) {
   try {
-    validateInputAdd(userInputs.slice(1));
+    validateTask(userInputs.slice(1));
 
     const newId = createID(data);
     const task = userInputs[1];
