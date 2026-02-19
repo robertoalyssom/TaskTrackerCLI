@@ -8,4 +8,9 @@ function validateTask(userInputs) {
   }
 }
 
-export { validateTask };
+function validateID(id) {
+  if (isNaN(id)) throw Error("ID input must be a number!");
+  if (id < 0) throw Error("ID input must be a positive number!");
+}
+
+export { validateTask, validateID };
