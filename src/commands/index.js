@@ -1,5 +1,6 @@
 import addTask from "../taskActions/addTask.js";
 import updateTask from "../taskActions/updateTask.js";
+import deleteTask from "../taskActions/deleteTask.js";
 
 export default function runCommand(userInputs, data) {
   const command = userInputs[0];
@@ -9,6 +10,7 @@ export default function runCommand(userInputs, data) {
   (command === "-v" || command === "--version") && showVersion();
   (command === "-a" || command === "--add") && addTask(data, userInputs);
   (command === "-u" || command === "--update") && updateTask(data, userInputs);
+  (command === "-d" || command === "--delete") && deleteTask(data, userInputs);
 }
 
 // Show app version
