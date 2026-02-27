@@ -15,5 +15,7 @@ export default function markProgress(data, inputs) {
 
     fs.writeFileSync("./data.json", JSON.stringify(data));
     console.log(`Task progress updated successfully (ID: ${id})`);
-  } catch (e) {}
+  } catch (e) {
+    console.log("Error while switching progress status: ", e);
+  }
 }
