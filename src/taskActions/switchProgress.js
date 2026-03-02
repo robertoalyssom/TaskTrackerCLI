@@ -10,8 +10,11 @@ export default function markProgress(data, inputs) {
     const taskIndex = data.findIndex((task) => task.id === id);
     if (taskIndex === -1) throw Error(`Task with ID ${id} does not exist!`);
 
-    if (progress === "mark-in-progress") data[taskIndex].status = "todo";
+    if (progress === "mark-in-progress") data[taskIndex].status = "in-progress";
     else data[taskIndex].status = "done";
+
+    // update updatedAt field
+    data[taskIndex].updatedAt = new Date().toLocaleString();
 
     fs.writeFileSync("./data.json", JSON.stringify(data));
     console.log(`Task progress updated successfully (ID: ${id})`);
