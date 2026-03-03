@@ -14,7 +14,7 @@ export default function listTask(data, inputs) {
     };
 
     const filteredTasks = data.filter((task) => task.status === status);
-    console.log(statusLabels[status], filteredTasks);
+    console.log(`Tasks ${status}:`, statusLabels[status], filteredTasks);
   } catch (e) {
     console.log("Error while listing tasks: ", e);
   }
