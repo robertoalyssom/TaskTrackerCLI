@@ -8,14 +8,30 @@ export default function runCommand(userInputs, data) {
   const command = userInputs[0];
   console.log("command: ", command);
 
-  // I need to crate validation according to 'userInputs' array length!
-  (command === "-v" || command === "--version") && showVersion();
-  (command === "-a" || command === "--add") && addTask(data, userInputs);
-  (command === "-u" || command === "--update") && updateTask(data, userInputs);
-  (command === "-d" || command === "--delete") && deleteTask(data, userInputs);
-  (command === "mark-in-progress" || command === "mark-done") &&
-    markProgress(data, userInputs);
-  command === "list" && listTask(data, userInputs);
+  try {
+    if (!command) throw Error("No command provided!");
+
+    const commandHandlers = {
+      "-v": () => showVersion(),
+      "--version": () => showVersion(),
+      "-a": () => addTask(data, userInputs),
+      "--add": () => addTask(data, userInputs),
+      "-u": () => updateTask(data, userInputs),
+      "--update": () => updateTask(data, userInputs),
+      "-d": () => deleteTask(data, userInputs),
+      "--delete": () => deleteTask(data, userInputs),
+      "mark-in-progress": () => markProgress(data, userInputs),
+      "mark-done": () => markProgress(data, userInputs),
+      list: () => listTask(data, userInputs),
+    };
+
+    const handler = commandHandlers[command];
+    if (!handler) throw Error("Wrong command!");
+
+    return handler();
+  } catch (e) {
+    console.log("Error running command: ", e);
+  }
 }
 
 // Show app version
