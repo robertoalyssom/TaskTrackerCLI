@@ -16,7 +16,6 @@ This project follows the [roadmap.sh Task Tracker challenge](https://roadmap.sh/
 ## Tech Stack
 
 - Node.js (ES Modules)
-- [Commander](https://www.npmjs.com/package/commander)
 - [Chalk](https://www.npmjs.com/package/chalk)
 - Local file persistence with Node `fs`
 
@@ -150,12 +149,10 @@ Errors are printed in the terminal.
 
 - Data is stored in a single local file (`data.json`) with synchronous writes.
 - IDs are generated from the last item in the array; manual edits to `data.json` may affect ID continuity.
-- Command parser is manual (`process.argv`) despite Commander being installed.
 - Output formatting is plain console logs (including some debug logs).
 
 ## Roadmap Ideas
 
-- Use Commander for a full CLI interface and help output.
 - Add automated tests.
 - Add input sanitization and stricter schema validation.
 - Improve output formatting (tables/colors) with Chalk.
