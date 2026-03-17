@@ -1,5 +1,8 @@
 import { validateTask } from "../validate.js";
 import fs from "fs";
+import chalk from "chalk";
+
+const log = console.log;
 
 // Add new task
 export default function addTask(data, userInputs) {
@@ -22,9 +25,9 @@ export default function addTask(data, userInputs) {
     // Write updated data in ./data.json
     fs.writeFileSync("./data.json", JSON.stringify(data));
 
-    console.log(`Task "${task}" added sucessfully (ID: ${newId})`);
+    log(chalk.green(`Task "${task}" added sucessfully (ID: ${newId})`));
   } catch (e) {
-    console.log(e);
+    console.log(chalk.red("Error while adding task: ", e.message));
   }
 }
 

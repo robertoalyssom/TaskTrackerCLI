@@ -1,5 +1,8 @@
 import { validateID } from "../validate.js";
 import fs from "fs";
+import chalk from "chalk";
+
+const log = console.log;
 
 export default function markProgress(data, inputs) {
   const [progress, id] = inputs;
@@ -17,8 +20,8 @@ export default function markProgress(data, inputs) {
     data[taskIndex].updatedAt = new Date().toLocaleString();
 
     fs.writeFileSync("./data.json", JSON.stringify(data));
-    console.log(`Task progress updated successfully (ID: ${id})`);
+    log(chalk.green(`Task progress updated successfully (ID: ${id})`));
   } catch (e) {
-    console.log("Error while switching progress status: ", e);
+    log(chalk.red("Error while switching progress status: ", e.message));
   }
 }
