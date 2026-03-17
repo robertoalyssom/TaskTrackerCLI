@@ -1,5 +1,8 @@
 import { validateID } from "../validate.js";
 import fs from "fs";
+import chalk from "chalk";
+
+const log = console.log;
 
 export default function deleteTask(data, userInputs) {
   const [, id] = userInputs;
@@ -13,8 +16,8 @@ export default function deleteTask(data, userInputs) {
     data[taskIndex].description = data.splice(taskIndex, 1);
 
     fs.writeFileSync("./data.json", JSON.stringify(data));
-    console.log(`Task deleted successfully (ID: ${id})`);
+    log(chalk.green(`Task deleted successfully (ID: ${id})`));
   } catch (e) {
-    console.log("Error while deleting: ", e);
+    log(chalk.red("Error while deleting: "), e.message);
   }
 }

@@ -1,9 +1,13 @@
+import chalk from "chalk";
+
+const log = console.log;
+
 export default function listTask(data, inputs) {
   const [, status] = inputs;
 
   try {
     if (!status) {
-      console.log("All tasks:", data);
+      log(chalk.cyan("All tasks:"), data);
       return;
     }
 
@@ -14,8 +18,8 @@ export default function listTask(data, inputs) {
     };
 
     const filteredTasks = data.filter((task) => task.status === status);
-    console.log(`Tasks ${status}:`, statusLabels[status], filteredTasks);
+    log(chalk.cyan(`Tasks ${status}:`), statusLabels[status], filteredTasks);
   } catch (e) {
-    console.log("Error while listing tasks: ", e);
+    log(chalk.red("Error while listing tasks: ", e.message));
   }
 }

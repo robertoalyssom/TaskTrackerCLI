@@ -1,5 +1,8 @@
 import { validateTask, validateID } from "../validate.js";
 import fs from "fs";
+import chalk from "chalk";
+
+const log = console.log;
 
 export default function updateTask(data, userInputs) {
   const [, id, ...newTask] = userInputs;
@@ -15,8 +18,8 @@ export default function updateTask(data, userInputs) {
     data[taskIndex].updatedAt = new Date().toLocaleString();
 
     fs.writeFileSync("./data.json", JSON.stringify(data));
-    console.log(`Task "${newTask.join(" ")}" updated successfully (ID: ${id})`);
+    log(chalk.green(`Task "${newTask.join(" ")}" updated (ID: ${id})`));
   } catch (e) {
-    console.log("Error updating: ", e);
+    log(chalk.red("Error updating task: ", e.message));
   }
 }
