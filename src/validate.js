@@ -1,5 +1,3 @@
-// Validate comand and input
-
 function validateTask(userInputs) {
   if (userInputs.length > 1) {
     throw Error(

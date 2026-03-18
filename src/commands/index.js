@@ -6,7 +6,6 @@ import listTask from "../taskActions/listTask.js";
 
 export default function runCommand(userInputs, data) {
   const command = userInputs[0];
-  console.log("command: ", command);
 
   try {
     if (!command) throw Error("No command provided!");
@@ -34,7 +33,7 @@ export default function runCommand(userInputs, data) {
   }
 }
 
-// Show app version
+// Display app version
 function showVersion() {
   console.log("0.0.1");
 }
