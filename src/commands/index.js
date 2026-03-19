@@ -3,10 +3,10 @@ import updateTask from "../taskActions/updateTask.js";
 import deleteTask from "../taskActions/deleteTask.js";
 import markProgress from "../taskActions/switchProgress.js";
 import listTask from "../taskActions/listTask.js";
+import { version } from "../../package.json";
 
 export default function runCommand(userInputs, data) {
   const command = userInputs[0];
-  console.log("command: ", command);
 
   try {
     if (!command) throw Error("No command provided!");
@@ -34,7 +34,7 @@ export default function runCommand(userInputs, data) {
   }
 }
 
-// Show app version
+// Display app version
 function showVersion() {
-  console.log("0.0.1");
+  console.log(version);
 }
