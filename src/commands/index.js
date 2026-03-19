@@ -3,6 +3,7 @@ import updateTask from "../taskActions/updateTask.js";
 import deleteTask from "../taskActions/deleteTask.js";
 import markProgress from "../taskActions/switchProgress.js";
 import listTask from "../taskActions/listTask.js";
+import { version } from "../../package.json";
 
 export default function runCommand(userInputs, data) {
   const command = userInputs[0];
@@ -35,5 +36,5 @@ export default function runCommand(userInputs, data) {
 
 // Display app version
 function showVersion() {
-  console.log("0.0.1");
+  console.log(version);
 }

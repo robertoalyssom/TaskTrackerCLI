@@ -1,5 +1,6 @@
 {
   "name": "tasktracker-cli",
+  "version": "1.0.0",
   "bin": {
     "tasktracker": "./index.js"
   },
